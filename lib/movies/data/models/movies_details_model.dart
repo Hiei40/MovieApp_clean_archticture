@@ -1,12 +1,14 @@
+
+
 import '../../domain/entities/movie_detail.dart';
 import 'genres_model.dart';
 
 class MovieDetailsModel extends MovieDetail {
   const MovieDetailsModel({
     required super.backdropPath,
-    required List<GenresModel> super.genres,
+    required super.genres,
     required super.id,
-    required String overview,
+    required super.overview,
     required super.releaseDate,
     required super.runtime,
     required super.title,
