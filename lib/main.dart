@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:movieapp/core/services/services_locator.dart';
 import 'package:movieapp/movies/presentation/screens/test.dart';
 
-import 'movies/presentation/screens/movies_screen.dart';
 
 void main() {
 

@@ -1,16 +1,11 @@
 import 'dart:async';
-
 import "package:bloc/bloc.dart";
+import 'package:movieapp/core/usecase/base_usecase.dart';
 import 'package:movieapp/core/utils/enums.dart';
-import 'package:movieapp/movies/data/datasource/movie_data_source.dart';
-import 'package:movieapp/movies/data/repository/movies_repository.dart';
-import 'package:movieapp/movies/domain/repository/base_movie_repository.dart';
 import 'package:movieapp/movies/domain/usecase/get_now_playing_movie_usecase.dart';
 import 'package:movieapp/movies/presentation/controller/movies_state.dart';
-
 import '../../domain/usecase/get_popular_movies_usecase.dart';
 import '../../domain/usecase/get_top_rated_movies_usecase.dart';
-
 part 'movies_event.dart';
 
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
@@ -30,7 +25,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getNowPlayingMovies(
       GetNowPlayingMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await getNowPlayingMovieUsecase();
+    final result = await getNowPlayingMovieUsecase(const NoParameters());
 
     result.fold(
             (l) => (l) => emit(state.copyWith(
@@ -41,7 +36,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getPopularMovies(
       GetPopularEvent event, Emitter<MoviesState> emit) async {
-    final result = await getPopularMoviesUsecase();
+    final result = await getPopularMoviesUsecase(const NoParameters());
 
     result.fold(
         (l) => (l) => emit(state.copyWith(
@@ -52,7 +47,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _topRated(
       GetTopRatedMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await getTopRatedMoviesUsecase();
+    final result = await getTopRatedMoviesUsecase(const NoParameters());
 
     result.fold(
         (l) => (l) => emit(state.copyWith(
