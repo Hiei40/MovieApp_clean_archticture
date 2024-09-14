@@ -8,6 +8,7 @@ import 'package:movieapp/movies/presentation/controller/movies_bloc.dart';
 import 'package:movieapp/movies/presentation/controller/movies_state.dart';
 
 import '../../../core/network/api_constance.dart';
+import '../screens/movie_detail_screen.dart';
 
 class NowPlayingComponent extends StatelessWidget {
   const NowPlayingComponent({super.key});
@@ -37,8 +38,15 @@ return const Center(child: CircularProgressIndicator());
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
-                        /// TODO : NAVIGATE TO MOVIE DETAILS
-                      },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                MovieDetailScreen(
+                                  id: item.id,
+                                ),
+                          ),
+                        );                      },
                       child: Stack(
                         children: [
                           ShaderMask(

@@ -5,7 +5,7 @@ class MovieDetailsState extends Equatable {
     this.movieDetail,
     this.movieDetailsState = RequestState.loading,
     this.movieDetailsMessage = '',
-    // this.recommendation = const [],
+    this.recommendation = const [],
     this.recommendationState = RequestState.loading,
     this.recommendationMessage = '',
   });
@@ -13,7 +13,7 @@ class MovieDetailsState extends Equatable {
   final MovieDetail? movieDetail;
   final RequestState movieDetailsState;
   final String movieDetailsMessage;
-  // final List<Recommendation> recommendation;
+  final List<Recommendation> recommendation;
   final RequestState recommendationState;
   final String recommendationMessage;
 
@@ -21,7 +21,7 @@ class MovieDetailsState extends Equatable {
     MovieDetail? movieDetail,
     RequestState? movieDetailsState,
     String? movieDetailsMessage,
-    // List<Recommendation>? recommendation,
+    List<Recommendation>? recommendation,
     RequestState? recommendationState,
     String? recommendationMessage,
   }) {
@@ -29,7 +29,7 @@ class MovieDetailsState extends Equatable {
       movieDetail: movieDetail ?? this.movieDetail,
       movieDetailsState: movieDetailsState ?? this.movieDetailsState,
       movieDetailsMessage: movieDetailsMessage ?? this.movieDetailsMessage,
-      // recommendation: recommendation ?? this.recommendation,
+      recommendation: recommendation ?? this.recommendation,
       recommendationState: recommendationState ?? this.recommendationState,
       recommendationMessage:
       recommendationMessage ?? this.recommendationMessage,
@@ -41,7 +41,7 @@ class MovieDetailsState extends Equatable {
     movieDetail,
     movieDetailsState,
     movieDetailsMessage,
-    // recommendation,
+    recommendation,
     recommendationState,
     recommendationMessage,
   ];

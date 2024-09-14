@@ -3,7 +3,7 @@ import 'package:movieapp/movies/domain/entities/recommendation.dart';
 
 class RecommendationModel extends Recommendation {
   const RecommendationModel({
-    super.backdropPath,
+    required super.backdropPath,
     required super.id,
   });
 

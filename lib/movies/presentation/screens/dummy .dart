@@ -1,6 +1,6 @@
-import 'movies/domain/entities/genres.dart';
-import 'movies/domain/entities/movie_detail.dart';
-import 'movies/domain/entities/recommendation.dart';
+import '../../domain/entities/genres.dart';
+import '../../domain/entities/movie_detail.dart';
+import '../../domain/entities/recommendation.dart';
 
 MovieDetail movieDetailDummy = const MovieDetail(
   backdropPath: "/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg",
@@ -12,7 +12,7 @@ MovieDetail movieDetailDummy = const MovieDetail(
       "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
   releaseDate: "2022-06-29",
   title: "Minions: The Rise of Gru",
-  voteAverage: 7.8, runtime: '87',
+  voteAverage: 7.8, runtime: 87,
 );
 
 List<Recommendation> recommendationDummy = [
